@@ -5,7 +5,7 @@
 replicaCount: 2
 
 image:
-  repository: eden266/node-app
+  repository: eden266/nodejs-project
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v1"
@@ -37,7 +37,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: LoadBalancer
+  type: NodePort
+  nodePort: 31678
   port: 4000
   targetPort: 4000
   protocol: TCP
